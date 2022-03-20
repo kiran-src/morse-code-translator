@@ -37,3 +37,19 @@ morse_letters = {
     '9': '____.',
     '0': '_____',
 }
+print("Enter text which you want to translate to morse code (Type '*end' to exit the program):")
+text = input().lower()
+while text != '*end':
+    morse = ''
+    check = False
+    for i in text:
+        if i not in morse_letters:
+            check = True
+            morse = morse + i
+        else:
+            morse = morse + morse_letters[i]
+    if check:
+        print('You have used characters which do not have a morse equivalent and were therefore unconverted')
+    print(f"Your converted text is:\n{morse}\nEnter what else you would like to convert (Type '*end' to exit the program):")
+    text = input().lower()
+print('Gooddbye')
